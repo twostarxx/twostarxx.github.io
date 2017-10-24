@@ -3,6 +3,15 @@
   
     
     <entry>
+      <title><![CDATA[博客搬运中]]></title>
+      <url>/2017/10/24/%E5%8D%9A%E5%AE%A2%E6%90%AC%E8%BF%90%E4%B8%AD/</url>
+      <content type="html"><![CDATA[<h2 id="博客搬运"><a href="#博客搬运" class="headerlink" title="博客搬运"></a>博客搬运</h2><p>包括：CSDN，sina等。</p>
+<h2 id="Coming-soom…"><a href="#Coming-soom…" class="headerlink" title="Coming soom…"></a>Coming soom…</h2>]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Android Studio创建虚拟器错误]]></title>
       <url>/2017/10/24/Android-Studio%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E5%99%A8%E9%94%99%E8%AF%AF/</url>
       <content type="html"><![CDATA[<p>在Android Studio的使用过程中，发现没有办法创建或运行虚拟机。在此记录一波三折的解决过程。<br><strong>最终解决方法：使用Genymotion模拟器插件代替原有虚拟器。</strong></p>
@@ -14,14 +23,6 @@
 <h2 id="5-AS插件"><a href="#5-AS插件" class="headerlink" title="5.AS插件"></a>5.AS插件</h2><p>网上教程比较多，就简单写写。<br>Android Studio –&gt; File –&gt; setting –&gt; plugins –&gt; Brower –&gt; 输入Genymotion –&gt; Download –&gt; restart AS.<br>出现下图最右边的图标则表示安装成功。<br><img src="http://oybyil7f9.bkt.clouddn.com/AS7.JPG" alt="图7"><br>第一次运行Genymotion需要配置路径，就不赘述了。</p>
 <p>附上成功界面。<br><img src="http://oybyil7f9.bkt.clouddn.com/AS8.JPG" alt="图8"></p>
 ]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[postThis is a test in 20171024]]></title>
-      <url>/2017/10/24/This-is-a-test-in-20171024/</url>
-      <content type="html"></content>
       
         
     </entry>
