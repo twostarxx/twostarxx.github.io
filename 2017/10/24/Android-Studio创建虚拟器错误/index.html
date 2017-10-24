@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://oybyil7f9.bkt.clouddn.com/AS6.JPG">
 <meta property="og:image" content="http://oybyil7f9.bkt.clouddn.com/AS7.JPG">
 <meta property="og:image" content="http://oybyil7f9.bkt.clouddn.com/AS8.JPG">
-<meta property="og:updated_time" content="2017-10-24T14:08:01.680Z">
+<meta property="og:updated_time" content="2017-10-24T14:09:13.801Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android Studio创建虚拟器错误">
 <meta name="twitter:description" content="在Android Studio的使用过程中，发现没有办法创建或运行虚拟机。在此记录一波三折的解决过程。最终解决方法：使用Genymotion模拟器插件代替原有虚拟器。 1.Error: Your CPU does not support required features (VT-x or SVM).使用Android Studio自带模拟器进行创建时，出现bug见下图。  查到前辈rznice的">
@@ -68,7 +68,7 @@
          
           <li><a href="/archives/">Writing</a></li>
          
-          <li><a href="http://github.com/probberechts">Projects</a></li>
+          <li><a href="http://github.com/twostarxx">Projects</a></li>
         
       </ul>
     </span>
@@ -104,7 +104,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Error-Your-CPU-does-not-support-required-features-VT-x-or-SVM"><span class="toc-number">1.</span> <span class="toc-text">1.Error: Your CPU does not support required features (VT-x or SVM).</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Error-This-computer-does-not-support-VT-x"><span class="toc-number">2.</span> <span class="toc-text">2.Error:This computer does not support VT-x.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-AMD处理器不能安装HAXM。"><span class="toc-number">3.</span> <span class="toc-text">3.AMD处理器不能安装HAXM。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装Genymotion"><span class="toc-number">4.</span> <span class="toc-text">4.安装Genymotion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-AS插件"><span class="toc-number">5.</span> <span class="toc-text">5.AS插件</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Error-Your-CPU-does-not-support-required-features-VT-x-or-SVM"><span class="toc-number">1.</span> <span class="toc-text">1.Error: Your CPU does not support required features (VT-x or SVM).</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Error-This-computer-does-not-support-VT-x"><span class="toc-number">2.</span> <span class="toc-text">2.Error:This computer does not support VT-x.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-AMD处理器不能安装HAXM"><span class="toc-number">3.</span> <span class="toc-text">3.AMD处理器不能安装HAXM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装Genymotion"><span class="toc-number">4.</span> <span class="toc-text">4.安装Genymotion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-AS插件"><span class="toc-number">5.</span> <span class="toc-text">5.AS插件</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -142,7 +142,7 @@
 <h2 id="1-Error-Your-CPU-does-not-support-required-features-VT-x-or-SVM"><a href="#1-Error-Your-CPU-does-not-support-required-features-VT-x-or-SVM" class="headerlink" title="1.Error: Your CPU does not support required features (VT-x or SVM)."></a>1.Error: Your CPU does not support required features (VT-x or SVM).</h2><p>使用Android Studio自带模拟器进行创建时，出现bug见下图。<br> <img src="http://oybyil7f9.bkt.clouddn.com/AS.JPG" alt="图1"></p>
 <p>查到前辈rznice的博客：<br><a href="http://blog.csdn.net/rznice/article/details/40210213" target="_blank" rel="external">http://blog.csdn.net/rznice/article/details/40210213</a><br>根据步骤安装 intelhaxm.exe，再次报错见点二。</p>
 <h2 id="2-Error-This-computer-does-not-support-VT-x"><a href="#2-Error-This-computer-does-not-support-VT-x" class="headerlink" title="2.Error:This computer does not support VT-x."></a>2.Error:This computer does not support VT-x.</h2><p>安装intelhaxm.exe时，出现下图所示。<br><img src="http://oybyil7f9.bkt.clouddn.com/AS2.JPG" alt="图2"><br>一度怀疑自己没有在BIOS中打开Virtualization Technology，多次确认打开后，重新安装intelhaxm.exe，依旧没有任何用处。<br>找到其他人的回答：<br><a href="http://stackoverflow.com/questions/16091677/intel-haxm-installation-error-this-computer-does-not-support-intel-virtualizat/18796753" target="_blank" rel="external">http://stackoverflow.com/questions/16091677/intel-haxm-installation-error-this-computer-does-not-support-intel-virtualizat/18796753</a><br>发现自己的电脑中并<strong>没有hyper-V</strong>，特意查看了别人的电脑，有的有，有的没。根据教程下载Intel Processor Identification Utility，试图安装hyper-V，安装失败。失败的原因见点3。<br>ps：发现一位大神翻遍了微软的官方文档，出个镜：<br><a href="http://www.crifan.com/adt_haxm_xd_not_supported_this_computer_does_not_support_intel_execute_disable_bit_xd_or_it_is_disable_in_the_bios/" target="_blank" rel="external">http://www.crifan.com/adt_haxm_xd_not_supported_this_computer_does_not_support_intel_execute_disable_bit_xd_or_it_is_disable_in_the_bios/</a></p>
-<h2 id="3-AMD处理器不能安装HAXM。"><a href="#3-AMD处理器不能安装HAXM。" class="headerlink" title="3.AMD处理器不能安装HAXM。"></a>3.AMD处理器不能安装HAXM。</h2><p>当我发现这个问题的时候，我开始怀疑无解了，然后开始想其他的办法。下图为我自己的处理器。<br><img src="http://oybyil7f9.bkt.clouddn.com/AS3.JPG" alt="图3"><br><strong>解决方式：Genymotion+AS插件</strong></p>
+<h2 id="3-AMD处理器不能安装HAXM"><a href="#3-AMD处理器不能安装HAXM" class="headerlink" title="3.AMD处理器不能安装HAXM"></a>3.AMD处理器不能安装HAXM</h2><p>当我发现这个问题的时候，我开始怀疑无解了，然后开始想其他的办法。下图为我自己的处理器。<br><img src="http://oybyil7f9.bkt.clouddn.com/AS3.JPG" alt="图3"><br><strong>解决方式：Genymotion+AS插件</strong></p>
 <h2 id="4-安装Genymotion"><a href="#4-安装Genymotion" class="headerlink" title="4.安装Genymotion"></a>4.安装Genymotion</h2><p>点击官网：<a href="http://www.genymotion.net/" target="_blank" rel="external">http://www.genymotion.net/</a>.<br>Genymotion有免费版和收费版，个人用免费版就够了。<br><img src="http://oybyil7f9.bkt.clouddn.com/AS4.JPG" alt="图4"><br>选择V-box，点击开始下载，安装过程略。<br><img src="http://oybyil7f9.bkt.clouddn.com/AS5.JPG" alt="图5"><br>备注：必须注册后才能下载，请记牢密码，下载安装时需要登录。<br><img src="http://oybyil7f9.bkt.clouddn.com/AS6.JPG" alt="图6"></p>
 <h2 id="5-AS插件"><a href="#5-AS插件" class="headerlink" title="5.AS插件"></a>5.AS插件</h2><p>网上教程比较多，就简单写写。<br>Android Studio –&gt; File –&gt; setting –&gt; plugins –&gt; Brower –&gt; 输入Genymotion –&gt; Download –&gt; restart AS.<br>出现下图最右边的图标则表示安装成功。<br><img src="http://oybyil7f9.bkt.clouddn.com/AS7.JPG" alt="图7"><br>第一次运行Genymotion需要配置路径，就不赘述了。</p>
 <p>附上成功界面。<br><img src="http://oybyil7f9.bkt.clouddn.com/AS8.JPG" alt="图8"></p>
@@ -166,13 +166,13 @@
          
           <li><a href="/archives/">Writing</a></li>
          
-          <li><a href="http://github.com/probberechts">Projects</a></li>
+          <li><a href="http://github.com/twostarxx">Projects</a></li>
         
       </ul>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Error-Your-CPU-does-not-support-required-features-VT-x-or-SVM"><span class="toc-number">1.</span> <span class="toc-text">1.Error: Your CPU does not support required features (VT-x or SVM).</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Error-This-computer-does-not-support-VT-x"><span class="toc-number">2.</span> <span class="toc-text">2.Error:This computer does not support VT-x.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-AMD处理器不能安装HAXM。"><span class="toc-number">3.</span> <span class="toc-text">3.AMD处理器不能安装HAXM。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装Genymotion"><span class="toc-number">4.</span> <span class="toc-text">4.安装Genymotion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-AS插件"><span class="toc-number">5.</span> <span class="toc-text">5.AS插件</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Error-Your-CPU-does-not-support-required-features-VT-x-or-SVM"><span class="toc-number">1.</span> <span class="toc-text">1.Error: Your CPU does not support required features (VT-x or SVM).</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Error-This-computer-does-not-support-VT-x"><span class="toc-number">2.</span> <span class="toc-text">2.Error:This computer does not support VT-x.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-AMD处理器不能安装HAXM"><span class="toc-number">3.</span> <span class="toc-text">3.AMD处理器不能安装HAXM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装Genymotion"><span class="toc-number">4.</span> <span class="toc-text">4.安装Genymotion</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-AS插件"><span class="toc-number">5.</span> <span class="toc-text">5.AS插件</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -218,7 +218,7 @@
          
           <li><a href="/archives/">Writing</a></li>
          
-          <li><a href="http://github.com/probberechts">Projects</a></li>
+          <li><a href="http://github.com/twostarxx">Projects</a></li>
         
       </ul>
     </nav>
