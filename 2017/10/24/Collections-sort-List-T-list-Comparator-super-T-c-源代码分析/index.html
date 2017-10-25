@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Collections.sort(List list, Comparator? super T c) 源代码分析Sorts the specified list according to the order induced by the specified comparator. 123456789public static &amp;lt;T&amp;gt; void sort(List&amp;lt;T&amp;gt; li">
+    <meta name="description" content="Collections.sort(List list, Comparator? super T c)Sorts the specified list according to the order induced by the specified comparator. 123456789public static &amp;lt;T&amp;gt; void sort(List&amp;lt;T&amp;gt; list, Co">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Collections.sort(List&lt;T&gt; list, Comparator&lt;? super T&gt; c) 源代码分析">
 <meta property="og:url" content="http://twostarxx.github.io/2017/10/24/Collections-sort-List-T-list-Comparator-super-T-c-源代码分析/index.html">
 <meta property="og:site_name" content="twostarxx">
-<meta property="og:description" content="Collections.sort(List list, Comparator? super T c) 源代码分析Sorts the specified list according to the order induced by the specified comparator. 123456789public static &amp;lt;T&amp;gt; void sort(List&amp;lt;T&amp;gt; li">
+<meta property="og:description" content="Collections.sort(List list, Comparator? super T c)Sorts the specified list according to the order induced by the specified comparator. 123456789public static &amp;lt;T&amp;gt; void sort(List&amp;lt;T&amp;gt; list, Co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-24T15:08:15.892Z">
+<meta property="og:updated_time" content="2017-10-24T15:22:07.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Collections.sort(List&lt;T&gt; list, Comparator&lt;? super T&gt; c) 源代码分析">
-<meta name="twitter:description" content="Collections.sort(List list, Comparator? super T c) 源代码分析Sorts the specified list according to the order induced by the specified comparator. 123456789public static &amp;lt;T&amp;gt; void sort(List&amp;lt;T&amp;gt; li">
+<meta name="twitter:description" content="Collections.sort(List list, Comparator? super T c)Sorts the specified list according to the order induced by the specified comparator. 123456789public static &amp;lt;T&amp;gt; void sort(List&amp;lt;T&amp;gt; list, Co">
     
     
         
@@ -58,8 +58,6 @@
           <li><a href="/">Home</a></li>
          
           <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/tags">tags</a></li>
          
           <li><a href="http://github.com/twostarxx">Projects</a></li>
         
@@ -136,7 +134,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>Collections.sort(List<t> list, Comparator? super T c) 源代码分析<br>Sorts the specified list according to the order induced by the specified comparator.</t></p>
+    <p>Collections.sort(List<t> list, Comparator? super T c)<br>Sorts the specified list according to the order induced by the specified comparator.</t></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(List&lt;T&gt; list, Comparator&lt;? <span class="keyword">super</span> T&gt; c)</span> </span>&#123;</div><div class="line">    Object[] a = list.toArray();  </div><div class="line">    Arrays.sort(a, (Comparator)c);  </div><div class="line">    ListIterator i = list.listIterator();  </div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;a.length; j++) &#123;  </div><div class="line">        i.next();  </div><div class="line">        i.set(a[j]);  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>该方法主要细分为三个步骤：</p>
 <ol>
@@ -162,8 +160,6 @@
           <li><a href="/">Home</a></li>
          
           <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/tags">tags</a></li>
          
           <li><a href="http://github.com/twostarxx">Projects</a></li>
         
@@ -214,8 +210,6 @@
           <li><a href="/">Home</a></li>
          
           <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/tags">tags</a></li>
          
           <li><a href="http://github.com/twostarxx">Projects</a></li>
         
